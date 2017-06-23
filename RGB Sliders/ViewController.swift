@@ -10,9 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var redSlider: UISlider!
+    @IBOutlet weak var greenSlider: UISlider!
+    @IBOutlet weak var blueSlider: UISlider!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        updateBackgroundColor()
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +24,12 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func updateBackgroundColor() {
+        let rVal = redSlider.value
+        let gVal = greenSlider.value
+        let bVal = blueSlider.value
+        view.backgroundColor = UIColor(colorLiteralRed: rVal, green: gVal, blue: bVal, alpha: 1)
+    }
+    
 }
 
