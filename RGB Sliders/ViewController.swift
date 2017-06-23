@@ -13,9 +13,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var redSlider: UISlider!
     @IBOutlet weak var greenSlider: UISlider!
     @IBOutlet weak var blueSlider: UISlider!
+    @IBOutlet weak var colorView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        colorView.layer.borderColor = UIColor.black.cgColor
+        colorView.layer.borderWidth = 1
+        
         updateBackgroundColor()
     }
 
@@ -28,7 +33,8 @@ class ViewController: UIViewController {
         let rVal = redSlider.value
         let gVal = greenSlider.value
         let bVal = blueSlider.value
-        view.backgroundColor = UIColor(colorLiteralRed: rVal, green: gVal, blue: bVal, alpha: 1)
+        
+        colorView.backgroundColor = UIColor(colorLiteralRed: rVal, green: gVal, blue: bVal, alpha: 1)
     }
     
 }
